@@ -1,28 +1,63 @@
 # SupaNexus
 
-A unified API gateway for working with multiple AI models through one simple interface.
+> A developer-focused AI gateway that simplifies working with multiple LLM providers through one unified API interface.
+
 
 ## Why SupaNexus?
 
-Building AI applications often means dealing with multiple model providers.
+Building AI applications often requires working with multiple model providers.
 
-Different APIs.
-Different authentication systems.
-Different SDKs.
-Different billing and usage limits.
+Each provider comes with different:
 
-Managing these differences can slow down development.
+- API formats
+- Authentication methods
+- SDKs
+- Pricing systems
+- Usage limits
 
-SupaNexus aims to simplify this workflow by providing a unified layer for accessing and managing multiple AI models.
+Switching between providers can become a bigger challenge than building the application itself.
+
+SupaNexus provides a unified layer that helps developers manage and interact with multiple AI models through a consistent workflow.
+
 
 ## Features
 
 - Unified API interface
 - Multiple LLM provider support
+- Simple model switching
 - Developer-friendly integration
-- Flexible model switching
-- Usage management
+- Usage tracking and management
 
-## Example
 
-Instead of integrating every provider separately:
+## Supported Models
+
+SupaNexus is designed to work with various modern AI models, including:
+
+- GPT models
+- Claude models
+- Qwen models
+- DeepSeek models
+- Other LLM providers
+
+
+## Quick Example
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://api.supanexus.ai/v1"
+)
+
+response = client.chat.completions.create(
+    model="your-model",
+    messages=[
+        {
+            "role": "user",
+            "content": "Hello, SupaNexus!"
+        }
+    ]
+)
+
+print(response.choices[0].message.content)
