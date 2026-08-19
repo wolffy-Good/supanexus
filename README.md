@@ -1,46 +1,50 @@
 # SupaNexus
 
-> A developer-focused AI gateway that simplifies working with multiple LLM providers through one unified API interface.
+Unified API access to multiple AI models through one simple endpoint.
 
+SupaNexus helps developers integrate and use multiple AI models with a single API interface.
 
 ## Why SupaNexus?
 
-Building AI applications often requires working with multiple model providers.
+Managing multiple AI providers can be complicated:
 
-Each provider comes with different:
+- Different API formats
+- Multiple authentication systems
+- Separate SDK integrations
+- Different provider requirements
 
-- API formats
-- Authentication methods
-- SDKs
-- Pricing systems
-- Usage limits
+SupaNexus provides a unified solution:
 
-Switching between providers can become a bigger challenge than building the application itself.
-
-SupaNexus provides a unified layer that helps developers manage and interact with multiple AI models through a consistent workflow.
-
-
-## Features
-
-- Unified API interface
-- Multiple LLM provider support
-- Simple model switching
-- Developer-friendly integration
-- Usage tracking and management
+- One consistent API format
+- OpenAI-compatible SDK
+- Simple API authentication
+- Centralized AI model access
 
 
 ## Supported Models
 
-SupaNexus is designed to work with various modern AI models, including:
+SupaNexus provides access to multiple AI models through one API.
 
-- GPT models
-- Claude models
-- Qwen models
-- DeepSeek models
-- Other LLM providers
+Currently supported models include:
+
+- Qwen
+- DeepSeek
+- Kimi
+- GLM
+- Doubao
+
+More models will be added continuously.
 
 
-## Quick Example
+## Quick Start
+
+### 1. Install OpenAI SDK
+
+```bash
+pip install openai
+```
+
+### 2. Configure API Client
 
 ```python
 from openai import OpenAI
@@ -55,9 +59,10 @@ response = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Hello, SupaNexus!"
+            "content": "Hello!"
         }
     ]
 )
 
 print(response.choices[0].message.content)
+```
