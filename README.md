@@ -1,68 +1,73 @@
 # SupaNexus
 
-Unified API access to multiple AI models through one simple endpoint.
 
-SupaNexus helps developers integrate and use multiple AI models with a single API interface.
+## One API. Multiple AI Models.
+
+
+SupaNexus is an AI gateway that helps developers access multiple LLM providers through one unified API interface.
+
+
+Building AI applications should not require managing dozens of different APIs, SDKs, and authentication systems.
+
+
+---
 
 ## Why SupaNexus?
 
-Managing multiple AI providers can be complicated:
+
+Modern AI development is becoming complicated:
+
 
 - Different API formats
 - Multiple authentication systems
 - Separate SDK integrations
-- Different provider requirements
+- Different pricing models
+- Difficult model selection
 
-SupaNexus provides a unified solution:
+
+SupaNexus provides a unified approach:
+
 
 - One consistent API format
-- OpenAI-compatible SDK
-- Simple API authentication
+- OpenAI-compatible interface
+- Simple authentication
 - Centralized AI model access
 
 
+---
+
 ## Supported Models
 
-SupaNexus provides access to multiple AI models through one API.
 
-Currently supported models include:
+SupaNexus aims to provide unified access to popular AI models:
 
-- Qwen
-- DeepSeek
-- Kimi
-- GLM
-- Doubao
 
-More models will be added continuously.
+| Model | Provider |
+|---|---|
+| DeepSeek | DeepSeek |
+| Qwen | Alibaba |
+| Kimi | Moonshot |
+| Claude | Anthropic |
+| GPT | OpenAI |
 
+
+---
+
+## Features
+
+
+- Unified API interface
+- Multiple LLM provider support
+- OpenAI-compatible API
+- Simple integration
+- Developer-friendly workflow
+
+
+---
 
 ## Quick Start
 
-### 1. Install OpenAI SDK
 
 ```bash
-pip install openai
-```
+git clone https://github.com/wolffy-Good/supanexus.git
 
-### 2. Configure API Client
-
-```python
-from openai import OpenAI
-
-client = OpenAI(
-    api_key="YOUR_API_KEY",
-    base_url="https://api.supanexus.ai/v1"
-)
-
-response = client.chat.completions.create(
-    model="your-model",
-    messages=[
-        {
-            "role": "user",
-            "content": "Hello!"
-        }
-    ]
-)
-
-print(response.choices[0].message.content)
-```
